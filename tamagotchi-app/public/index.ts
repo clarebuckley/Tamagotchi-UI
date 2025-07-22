@@ -1,0 +1,1 @@
+export default "./tamagotchi.gif" as "tamagotchi";

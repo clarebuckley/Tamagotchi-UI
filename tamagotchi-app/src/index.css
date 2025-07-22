@@ -1,0 +1,44 @@
+.tamagotchi-container {
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+}
+
+.tamagotchi-gif {
+    width: 300px;
+}
+
+.app-container {
+    min-width: 900px;
+    width: 50vw;
+    height: 100vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checklist-container {
+    background-color: #FFF1E8;
+    height: 100%;
+    padding: 50px;
+}
+
+h1 {
+    font-family: "Freckle Face", system-ui;
+    font-weight: 400;
+    font-size: 110px;
+    font-style: normal;
+    text-align: center;
+    background-color: #E5D9E2;
+}
+
+h2 {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-size: 40px;
+    font-style: normal;
+}
