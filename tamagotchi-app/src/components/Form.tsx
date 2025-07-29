@@ -1,29 +1,25 @@
 import { useState } from "react";
 
 function Form(props) {
-
-
-    const [name, setName] = useState("");
+    const [title, setTitle] = useState("");
     function handleChange(event) {
-        setName(event.target.value);
+        setTitle(event.target.value);
     }
 
     function handleSubmit(e) {
-  e.preventDefault();
-  props.editTask(props.id, name);
-  setName("");
-  //setEditing(false);
-}
+        e.preventDefault();
+        props.addTask(title);
+        setTitle("");
+    }
 
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 id="new-todo-input"
-                className="input input__lg"
                 name="text"
                 autoComplete="off"
-                value={name}
+                value={title}
                 onChange={handleChange}
             />
             <button type="submit" className="btn btn__primary btn__lg">

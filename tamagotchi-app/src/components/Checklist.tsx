@@ -2,7 +2,7 @@ import Form from "./Form";
 import FilterButton from "./FilterButton";
 import Todo from "./Todo";
 import { useState } from "react";
-
+import { ChecklistApi } from "../services/checklist.api";
 
 const FILTER_MAP = {
   All: () => true,
@@ -39,10 +39,13 @@ function Checklist(props) {
     />
   ));
 
-
-
-  function addTask(title) {
-    const newTask = { id: "id", title, completed: false };
+  async function addTask(title) {
+    await ChecklistApi.create({
+      "title": title,
+      "description": "TODO: add description as param",
+      "isComplete": false
+    })
+    const newTask = { id: null, title, completed: false };
     setTasks([...tasks, newTask]);
   }
 
@@ -79,14 +82,10 @@ function Checklist(props) {
       <h2>CHECKLIST</h2>
       <Form addTask={addTask} />
 
-      <div className="filters btn-group stack-exception">{filterList}</div>
-
-
+      <div>{filterList}</div>
       <h3 id="list-heading">{headingText}</h3>
-
       <ul
         role="list"
-        className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading">
         {taskList}
       </ul>

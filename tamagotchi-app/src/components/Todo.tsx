@@ -16,38 +16,34 @@ function Todo(props) {
   }
 
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="todo-label" htmlFor={props.id}>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor={props.id}>
           New title for {props.title}
         </label>
         <input
           id={props.id}
-          className="todo-text"
           type="text"
           value={newTitle}
           onChange={handleChange}
         />
       </div>
-      <div className="btn-group">
+      <div>
         <button
           type="button"
-          className="btn todo-cancel"
           onClick={() => setEditing(false)}>
           Cancel
-          <span className="visually-hidden">renaming {props.title}</span>
         </button>
-        <button type="submit" className="btn btn__primary todo-edit">
+        <button type="submit">
           Save
-          <span className="visually-hidden">new title for {props.title}</span>
         </button>
       </div>
     </form>
   );
 
   const viewTemplate = (
-    <div className="stack-small">
-      <div className="c-cb">
+    <div>
+      <div>
         <input
           id={props.id}
           type="checkbox"
@@ -58,26 +54,24 @@ function Todo(props) {
           {props.title}
         </label>
       </div>
-      <div className="btn-group">
+      <div>
         <button
           type="button"
-          className="btn"
           onClick={() => {
             setEditing(true);
           }}>
-          Edit <span className="visually-hidden">{props.title}</span>
+          Edit
         </button>
         <button
           type="button"
-          className="btn btn__danger"
           onClick={() => props.deleteTask(props.id)}>
-          Delete <span className="visually-hidden">{props.title}</span>
+          Delete
         </button>
       </div>
     </div>
   );
 
-  return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
+  return <li>{isEditing ? editingTemplate : viewTemplate}</li>;
 }
 
 export default Todo;
