@@ -1,3 +1,5 @@
+/*https://paletton.com/#uid=b525w2H0k1GOA00++0fXq4lDn8lum#*/
+
 .tamagotchi-container {
     background-image: url('./assets/background.jpg');
     background-size: cover;
@@ -42,4 +44,81 @@ h2 {
     font-weight: 400;
     font-size: 40px;
     font-style: normal;
+}
+
+.todoContainer {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-left: 5px;
+    background-color: #E5D9E2;
+    border-radius: 8px;
+    border-width: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: baseline;
+}
+
+.addButton {
+    background-color: #CFE5C6;
+}
+
+.filterButton {
+    background-color: #CDB2C7;
+}
+
+.filterButtonContainer {
+    margin: 10px 0px 10px 0px;
+}
+
+body {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    font: inherit;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #CDB2C7;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    background-color: white
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    font-size: 20px;
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    background-color: #CDB2C7;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: gray;
 }

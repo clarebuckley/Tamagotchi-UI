@@ -82,13 +82,13 @@ function Checklist(props) {
       <h2>CHECKLIST</h2>
       <Form addTask={addTask} />
 
-      <div>{filterList}</div>
+      <div className="filterButtonContainer">{filterList}</div>
       <h3 id="list-heading">{headingText}</h3>
-      <ul
+      <div
         role="list"
         aria-labelledby="list-heading">
         {taskList}
-      </ul>
+      </div>
     </div>
   );
 }

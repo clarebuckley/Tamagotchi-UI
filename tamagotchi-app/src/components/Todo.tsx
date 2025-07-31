@@ -48,7 +48,7 @@ function Todo(props) {
   );
 
   const viewTemplate = (
-    <div>
+    <div className="todoContainer">
       <div>
         <input
           id={props.id}
@@ -60,8 +60,9 @@ function Todo(props) {
           {props.title}
         </label>
       </div>
-      <div>
+      <div className="todoButtonContainer">
         <button
+          className="actionButton"
           type="button"
           onClick={() => {
             setEditing(true);
@@ -69,6 +70,7 @@ function Todo(props) {
           Edit
         </button>
         <button
+          className="actionButton"
           type="button"
           onClick={() => props.deleteTask(props.id)}>
           Delete
@@ -77,7 +79,7 @@ function Todo(props) {
     </div>
   );
 
-  return <li>{isEditing ? editingTemplate : viewTemplate}</li>;
+  return <div>{isEditing ? editingTemplate : viewTemplate}</div>;
 }
 
 export default Todo;

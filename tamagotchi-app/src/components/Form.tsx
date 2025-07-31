@@ -22,7 +22,7 @@ function Form(props) {
                 value={title}
                 onChange={handleChange}
             />
-            <button type="submit" className="btn btn__primary btn__lg">
+            <button type="submit" className="addButton">
                 Add
             </button>
         </form>
