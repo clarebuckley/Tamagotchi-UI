@@ -1,6 +1,7 @@
 .tamagotchi-container {
     background-image: url('./assets/background.jpg');
     background-size: cover;
+    min-height: 600px;
     height: 100%;
     display: flex;
     justify-content: center;

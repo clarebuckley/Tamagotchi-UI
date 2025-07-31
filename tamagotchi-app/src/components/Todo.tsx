@@ -10,7 +10,13 @@ function Todo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.editTask(props.id, newTitle);
+    var toUpdate = {
+        id: props.id,
+        title: newTitle,
+        isComplete: props.isComplete,
+        description: "we don't have descriptions yet"
+    }
+    props.editTask(toUpdate);
     setNewTitle("");
     setEditing(false);
   }
@@ -47,7 +53,7 @@ function Todo(props) {
         <input
           id={props.id}
           type="checkbox"
-          defaultChecked={props.completed}
+          defaultChecked={props.isComplete}
           onChange={() => props.toggleTaskCompleted(props.id)}
         />
         <label className="todo-label" htmlFor={props.id}>
